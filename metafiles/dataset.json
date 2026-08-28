@@ -2,6 +2,27 @@
   "graphs": [
     {
       "meta-info": "<none>",
+      "link": "http://tamu.edu",
+      "source-file": "nemeth15.mtx",
+      "type": "unordered",
+      "deg-avg": 28.8927,
+      "deg-sd": 5.1246,
+      "deg-min": 1,
+      "deg-max": 38,
+      "deg-distribution": [
+        "1 10 0.0215",
+        "10 20 0.0843",
+        "20 25 0.1412",
+        "25 28 0.2105",
+        "28 30 0.2841",
+        "30 32 0.1534",
+        "32 35 0.0812",
+        "35 39 0.0238"
+      ],
+      "size": "9506 9506 274654"
+    },
+    {
+      "meta-info": "<none>",
       "link": "http://sparse.tamu.edu/LAW/amazon-2008",
       "source-file": "amazon-2008.mtx",
       "type": "unordered",

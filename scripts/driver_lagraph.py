@@ -24,10 +24,13 @@ class DriverLaGraph(driver.Driver):
     def __init__(self, lagraph_build_root: pathlib.Path = LaGRAPH_PATH):
         super().__init__()
         self.exec_dir = lagraph_build_root / "src" / "benchmark"
+        self.experimental_exec_dir = lagraph_build_root / "experimental" / "benchmark"
+
         self.lagraph_bfs = "bfs_demo" + config.EXECUTABLE_EXT
         self.lagraph_sssp = "sssp_demo" + config.EXECUTABLE_EXT
         self.lagraph_pr = "gappagerank_demo" + config.EXECUTABLE_EXT
         self.lagraph_tc = "tc_demo" + config.EXECUTABLE_EXT
+        self.lagraph_msf = "msf_demo" + config.EXECUTABLE_EXT
 
         try:
             self.exec_dir = pathlib.Path(os.environ["BENCH_DRIVER_LAGRAPH"])
@@ -60,6 +63,55 @@ class DriverLaGraph(driver.Driver):
             [str(self.exec_dir / self.lagraph_tc), graph.path()])
         return DriverLaGraph._parse_output(output, "trial ", 2, "nthreads: ", 3)
 
+    def run_mst(self, graph: dataset.Graph, num_iterations) -> driver.ExecutionResult:
+        runs = []
+        mst_weight = None
+        
+        for _ in range(num_iterations):
+            output = subprocess.check_output(
+                [str(self.experimental_exec_dir / self.lagraph_msf), str(graph.path_original())]).decode()
+            
+            time_ms = None
+            for line in output.split('\n'):
+                if "LAGraph_msf took" in line:
+                    parts = line.split()
+                    # Формат: "LAGraph_msf took 0.0609566 sec"
+                    # parts = ['LAGraph_msf', 'took', '0.0609566', 'sec']
+                    if len(parts) >= 3:
+                        try:
+                            time_sec = float(parts[2])
+                            time_ms = time_sec * 1000
+                            runs.append(time_ms)
+                        except ValueError:
+                            pass
+                
+                if 'MST total weight:' in line:
+                    weight_str = line.split('MST total weight:')[-1].strip()
+                    try:
+                        mst_weight = float(weight_str)
+                    except ValueError:
+                        pass
+            
+            if time_ms is None:
+                # Если не нашли время, пробуем другой формат
+                for line in output.split('\n'):
+                    if 'msf took' in line.lower():
+                        import re
+                        numbers = re.findall(r'([0-9]+\.?[0-9]*)', line)
+                        if numbers:
+                            time_sec = float(numbers[0])
+                            time_ms = time_sec * 1000
+                            runs.append(time_ms)
+                            break
+        
+        if not runs:
+            return driver.ExecutionResult(0, [], mst_weight=mst_weight)
+    
+        warm_up = runs[0]
+        times = runs[1:] if len(runs) > 1 else []
+        
+        return driver.ExecutionResult(warm_up, times, mst_weight=mst_weight)
+
     @staticmethod
     def _parse_output(output: bytes,
                       trial_line_start: str,
@@ -67,7 +119,7 @@ class DriverLaGraph(driver.Driver):
                       warmup_line_start: str = None,
                       warmup_line_token: int = None):
         time_factor = 1000
-        lines = output.decode("ASCII").split("\n")
+        lines = output.decode("utf-8").split("\n")
         trials = []
         for trial_line in lines_startswith(lines, trial_line_start):
             trials.append(float(tokenize(trial_line)[
@@ -89,7 +141,7 @@ def tokenize(line: str) -> typing.List[str]:
 
 class TemporarySourcesFile:
     def __init__(self, sources: typing.List[int]):
-        self.name = f'sources_{str(time.ctime())}_.mtx'
+        self.name = f'sources_{int(time.time())}_.mtx'
         self.freeze = False
         self.fd = None
         self.sources = sources
