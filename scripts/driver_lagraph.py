@@ -69,8 +69,7 @@ class DriverLaGraph(driver.Driver):
         
         for _ in range(num_iterations):
             output = subprocess.check_output(
-                [str(self.experimental_exec_dir / self.lagraph_msf), str(graph.path_original())]).decode()
-            
+                [str(self.experimental_exec_dir / self.lagraph_msf), str(graph.path())]).decode()
             time_ms = None
             for line in output.split('\n'):
                 if "LAGraph_msf took" in line:
