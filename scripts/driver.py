@@ -12,6 +12,7 @@ class ExecutionResult:
     """
     warm_up: float
     times: typing.List[float]
+    mst_weight: typing.Optional[float] = None
 
     def avg(self):
         return statistics.mean(self.times)
@@ -29,9 +30,12 @@ class ExecutionResult:
         return min(self.times)
 
     def brief_str(self) -> str:
-        return f'warm_up={self.warm_up:.2f}ms, avg={self.avg():.2f}ms, ' \
+        base = f'warm_up={self.warm_up:.2f}ms, avg={self.avg():.2f}ms, ' \
                f'sd={self.sd():.2f}, median={self.median():.2f}ms, ' \
                f'min={self.minimum()}ms, max={self.maximum()}ms'
+        if self.mst_weight is not None:
+                base += f', mst_weight={self.mst_weight:.4f}'
+        return base
 
     def __str__(self) -> str:
         return self.brief_str()
@@ -51,6 +55,7 @@ class Driver:
         * sssp        (single-source shortest paths)
         * pr          (page rank)
         * tc          (triangles counting)
+        * mst         (minimum spanning tree)
         * [future] cc (connected components)
     """
 
@@ -108,6 +113,16 @@ class Driver:
         """
         pass
 
+    @abc.abstractmethod
+    def run_mst(self, graph: dataset.Graph, num_iterations: int) -> ExecutionResult:
+        """
+        Run mst algorithm benchmark.
+        :param graph: Graph with its properties to run on
+        :param num_iterations: Number of iteration to run
+        :return: execution results
+        """
+        pass
+
     def run(self, graph: dataset.Graph, algo: str, params: dict) -> ExecutionResult:
         """
         Execute driver benchmark with specified params
@@ -126,6 +141,8 @@ class Driver:
             result = self.run_pr(graph, int(params['num_iterations']))
         elif algo == 'tc':
             result = self.run_tc(graph, int(params['num_iterations']))
+        elif algo == 'mst':
+            result = self.run_mst(graph, int(params['num_iterations']))
         else:
             raise Exception(f"Unknown algorithm {algo}")
 

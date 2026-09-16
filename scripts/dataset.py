@@ -47,6 +47,7 @@ ALGORITHM_NAME_bfs = "bfs"
 ALGORITHM_NAME_sssp = "sssp"
 ALGORITHM_NAME_pr = "pr"
 ALGORITHM_NAME_tc = "tc"
+ALGORITHM_NAME_mst = "mst"
 
 GRAPH_NAME_coAuthorsCiteseer = 'coAuthorsCiteseer'
 GRAPH_NAME_mycielskian19 = 'mycielskian19'
@@ -63,6 +64,18 @@ GRAPH_NAME_indochina2004 = 'indochina-2004'
 GRAPH_NAME_rgg_n_2_23_s0 = 'rgg_n_2_23_s0'
 GRAPH_NAME_road_central = 'road_central'
 GRAPH_NAME_twitter7 = 'twitter7'
+GRAPH_NAME_nemeth15 = 'nemeth15'
+GRAPH_NAME_1138_bus = '1138_bus'
+GRAPH_NAME_CAG_mat1916 = 'CAG_mat1916'
+GRAPH_NAME_sherman3 = 'sherman3'
+GRAPH_NAME_cage13 = 'cage13'
+GRAPH_NAME_c_73 = 'c-73'
+GRAPH_NAME_appu = 'appu'
+GRAPH_NAME_G10 = 'G10'
+GRAPH_NAME_GaAsH6 = 'GaAsH6'
+GRAPH_NAME_language = 'language'
+GRAPH_NAME_TSOPF_RS_b2383 = 'TSOPF_RS_b2383'
+GRAPH_NAME_human_gene2 = 'human_gene2'
 
 GRAPHS_NAMES_ALL = [
     GRAPH_NAME_coAuthorsCiteseer,
@@ -79,7 +92,19 @@ GRAPHS_NAMES_ALL = [
     GRAPH_NAME_indochina2004,
     GRAPH_NAME_rgg_n_2_23_s0,
     GRAPH_NAME_road_central,
-    GRAPH_NAME_twitter7
+    GRAPH_NAME_twitter7,
+    GRAPH_NAME_nemeth15,
+    GRAPH_NAME_1138_bus,
+    GRAPH_NAME_CAG_mat1916,
+    GRAPH_NAME_sherman3,
+    GRAPH_NAME_cage13,
+    GRAPH_NAME_c_73,
+    GRAPH_NAME_appu,
+    GRAPH_NAME_G10,
+    GRAPH_NAME_GaAsH6,
+    GRAPH_NAME_language,
+    GRAPH_NAME_TSOPF_RS_b2383,
+    GRAPH_NAME_human_gene2
 ]
 
 GRAPHS_NAMES_SHORT = {
@@ -97,7 +122,19 @@ GRAPHS_NAMES_SHORT = {
     GRAPH_NAME_indochina2004: "i2004",
     GRAPH_NAME_rgg_n_2_23_s0: "rggn223s0",
     GRAPH_NAME_road_central: "roadcent",
-    GRAPH_NAME_twitter7: "twit7"
+    GRAPH_NAME_twitter7: "twit7",
+    GRAPH_NAME_nemeth15: 'nmth15',
+    GRAPH_NAME_1138_bus: '1138bs',
+    GRAPH_NAME_CAG_mat1916: 'CAG1916',
+    GRAPH_NAME_sherman3: 'shrmn3',
+    GRAPH_NAME_cage13: 'cage13',
+    GRAPH_NAME_c_73: 'c-73',
+    GRAPH_NAME_appu: 'appu',
+    GRAPH_NAME_G10: 'G10',
+    GRAPH_NAME_GaAsH6: 'GSH',
+    GRAPH_NAME_language: 'lngg',
+    GRAPH_NAME_TSOPF_RS_b2383: 'TSOPF_RS_b2383',
+    GRAPH_NAME_human_gene2: 'human_gene2'
 }
 
 GRAPHS_NAMES_DEFAULT = [
@@ -131,6 +168,18 @@ GRAPH_indochina2004 = Graph(GRAPH_NAME_indochina2004)
 GRAPH_rgg_n_2_23_s0 = Graph(GRAPH_NAME_rgg_n_2_23_s0)
 GRAPH_road_central = Graph(GRAPH_NAME_road_central)
 GRAPH_twitter7 = Graph(GRAPH_NAME_twitter7)
+GRAPH_nemeth15 = Graph(GRAPH_NAME_nemeth15)
+GRAPH_1138_bus = Graph(GRAPH_NAME_1138_bus)
+GRAPH_CAG_mat1916 = Graph(GRAPH_NAME_CAG_mat1916)
+GRAPH_sherman3 = Graph(GRAPH_NAME_sherman3)
+GRAPH_cage13 = Graph(GRAPH_NAME_cage13)
+GRAPH_c_73 = Graph(GRAPH_NAME_c_73)
+GRAPH_appu = Graph(GRAPH_NAME_appu)
+GRAPH_G10 = Graph(GRAPH_NAME_G10)
+GRAPH_GaAsH6 = Graph(GRAPH_NAME_GaAsH6)
+GRAPH_language = Graph(GRAPH_NAME_language)
+GRAPH_TSOPF_RS_b2383 = Graph(GRAPH_NAME_TSOPF_RS_b2383)
+GRAPH_human_gene2 = Graph(GRAPH_NAME_human_gene2)
 
 GRAPHS_DATA = {
     GRAPH_NAME_coAuthorsCiteseer: GRAPH_coAuthorsCiteseer,
@@ -147,7 +196,19 @@ GRAPHS_DATA = {
     GRAPH_NAME_indochina2004: GRAPH_indochina2004,
     GRAPH_NAME_rgg_n_2_23_s0: GRAPH_rgg_n_2_23_s0,
     GRAPH_NAME_road_central: GRAPH_road_central,
-    GRAPH_NAME_twitter7: GRAPH_twitter7
+    GRAPH_NAME_twitter7: GRAPH_twitter7,
+    GRAPH_NAME_nemeth15: GRAPH_nemeth15,
+    GRAPH_NAME_1138_bus: GRAPH_1138_bus,
+    GRAPH_NAME_CAG_mat1916: GRAPH_CAG_mat1916,
+    GRAPH_NAME_sherman3: GRAPH_sherman3,
+    GRAPH_NAME_cage13: GRAPH_cage13,
+    GRAPH_NAME_c_73: GRAPH_c_73,
+    GRAPH_NAME_appu: GRAPH_appu,
+    GRAPH_NAME_G10: GRAPH_G10,
+    GRAPH_NAME_GaAsH6:    GRAPH_GaAsH6,
+    GRAPH_NAME_language: GRAPH_language,
+    GRAPH_NAME_TSOPF_RS_b2383: GRAPH_TSOPF_RS_b2383,
+    GRAPH_NAME_human_gene2: GRAPH_human_gene2
 }
 
 GRAPHS_BFS = [
@@ -210,16 +271,31 @@ GRAPHS_TC = [
     GRAPH_road_central
 ]
 
+GRAPHS_MST = [
+    GRAPH_nemeth15,
+    GRAPH_1138_bus,
+    GRAPH_CAG_mat1916,
+    GRAPH_sherman3,
+    GRAPH_G10,
+    GRAPH_c_73,
+    GRAPH_GaAsH6,
+    GRAPH_appu,
+    GRAPH_TSOPF_RS_b2383,
+    GRAPH_human_gene2
+]
+
 ALGORITHMS = [
     ALGORITHM_NAME_bfs,
     ALGORITHM_NAME_sssp,
     ALGORITHM_NAME_pr,
-    ALGORITHM_NAME_tc
+    ALGORITHM_NAME_tc,
+    ALGORITHM_NAME_mst
 ]
 
 GRAPHS = {
     ALGORITHM_NAME_bfs: GRAPHS_BFS,
     ALGORITHM_NAME_sssp: GRAPHS_SSSP,
     ALGORITHM_NAME_pr: GRAPHS_PR,
-    ALGORITHM_NAME_tc: GRAPHS_TC
+    ALGORITHM_NAME_tc: GRAPHS_TC,
+    ALGORITHM_NAME_mst: GRAPHS_MST
 }

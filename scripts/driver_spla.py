@@ -24,6 +24,7 @@ class DriverSpla(driver.Driver):
         self.spla_sssp = "sssp" + config.EXECUTABLE_EXT
         self.spla_pr = "pr" + config.EXECUTABLE_EXT
         self.spla_tc = "tc" + config.EXECUTABLE_EXT
+        self.spla_mst = "mst" + config.EXECUTABLE_EXT
         self.undirected = 0
         self.run_cpu = False
 
@@ -80,14 +81,70 @@ class DriverSpla(driver.Driver):
              self._get_device()])
         return DriverSpla._parse_output(output)
 
+    def run_mst(self, graph: dataset.Graph, num_iterations) -> driver.ExecutionResult:
+        output = subprocess.check_output(
+            [str(self.exec_dir / self.spla_mst),
+             f"--mtxpath={graph.path_original()}",
+             f"--run-cpu={self.run_cpu}",
+             f"--niters={num_iterations}",
+             self._get_platform(),
+             self._get_device()])
+        return DriverSpla._parse_output_mst(output)
+
     @staticmethod
     def _parse_output(output):
-        lines = output.decode("ASCII").replace("\r", "").split("\n")
+        lines = output.decode("utf-8").replace("\r", "").split("\n")
         runs = []
         for line in lines:
             if line.startswith("gpu(ms):"):
                 runs = [float(v) for v in line.split(", ")[1:-1]]
         return driver.ExecutionResult(runs[0], runs[1:])
+
+    @staticmethod
+    def _parse_output_mst(output):
+        
+        """Парсинг для MST с извлечением веса"""
+        text = output.decode("utf-8")
+        lines = text.replace("\r", "").split("\n")
+        
+        runs = []
+        mst_weight = None
+        
+        for line in lines:
+            if "gpu(ms):" in line:
+                # Убираем "gpu(ms):" и разделяем по запятым
+                time_str = line.replace("gpu(ms):", "").strip()
+                # Убираем последнюю запятую если есть
+                if time_str.endswith(','):
+                    time_str = time_str[:-1]
+                # Разделяем по запятым
+                parts = time_str.split(",")
+                for part in parts:
+                    part = part.strip()
+                    if part:
+                        try:
+                            runs.append(float(part))
+                        except ValueError:
+                            pass
+                break
+        
+        for line in lines:
+            if "MST total weight:" in line:
+                weight_str = line.split("MST total weight:")[-1].strip()
+                try:
+                    mst_weight = float(weight_str)
+                except ValueError:
+                    pass
+                break
+        
+        # Защита от пустых данных
+        if not runs:
+            return driver.ExecutionResult(0, [], mst_weight=mst_weight)
+        
+        warm_up = runs[0]
+        times = runs[1:] if len(runs) > 1 else []
+        
+        return driver.ExecutionResult(warm_up, times, mst_weight=mst_weight)
 
     def _get_platform(self):
         return f"--platform={self.params['platform']}"

@@ -12,4 +12,5 @@
 	url = https://github.com/DrTimothyAldenDavis/GraphBLAS.git
 [submodule "deps/spla"]
 	path = deps/spla
-	url = https://github.com/JetBrains-Research/spla.git
+	url = https://github.com/b08lsoai/spla.git
+	branch = develop
