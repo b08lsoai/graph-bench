@@ -74,6 +74,8 @@ GRAPH_NAME_appu = 'appu'
 GRAPH_NAME_G10 = 'G10'
 GRAPH_NAME_GaAsH6 = 'GaAsH6'
 GRAPH_NAME_language = 'language'
+GRAPH_NAME_TSOPF_RS_b2383 = 'TSOPF_RS_b2383'
+GRAPH_NAME_human_gene2 = 'human_gene2'
 
 GRAPHS_NAMES_ALL = [
     GRAPH_NAME_coAuthorsCiteseer,
@@ -100,7 +102,9 @@ GRAPHS_NAMES_ALL = [
     GRAPH_NAME_appu,
     GRAPH_NAME_G10,
     GRAPH_NAME_GaAsH6,
-    GRAPH_NAME_language
+    GRAPH_NAME_language,
+    GRAPH_NAME_TSOPF_RS_b2383,
+    GRAPH_NAME_human_gene2
 ]
 
 GRAPHS_NAMES_SHORT = {
@@ -128,7 +132,9 @@ GRAPHS_NAMES_SHORT = {
     GRAPH_NAME_appu: 'appu',
     GRAPH_NAME_G10: 'G10',
     GRAPH_NAME_GaAsH6: 'GSH',
-    GRAPH_NAME_language: 'lngg'
+    GRAPH_NAME_language: 'lngg',
+    GRAPH_NAME_TSOPF_RS_b2383: 'TSOPF_RS_b2383',
+    GRAPH_NAME_human_gene2: 'human_gene2'
 }
 
 GRAPHS_NAMES_DEFAULT = [
@@ -172,6 +178,8 @@ GRAPH_appu = Graph(GRAPH_NAME_appu)
 GRAPH_G10 = Graph(GRAPH_NAME_G10)
 GRAPH_GaAsH6 = Graph(GRAPH_NAME_GaAsH6)
 GRAPH_language = Graph(GRAPH_NAME_language)
+GRAPH_TSOPF_RS_b2383 = Graph(GRAPH_NAME_TSOPF_RS_b2383)
+GRAPH_human_gene2 = Graph(GRAPH_NAME_human_gene2)
 
 GRAPHS_DATA = {
     GRAPH_NAME_coAuthorsCiteseer: GRAPH_coAuthorsCiteseer,
@@ -198,7 +206,9 @@ GRAPHS_DATA = {
     GRAPH_NAME_appu: GRAPH_appu,
     GRAPH_NAME_G10: GRAPH_G10,
     GRAPH_NAME_GaAsH6:    GRAPH_GaAsH6,
-    GRAPH_NAME_language: GRAPH_language
+    GRAPH_NAME_language: GRAPH_language,
+    GRAPH_NAME_TSOPF_RS_b2383: GRAPH_TSOPF_RS_b2383,
+    GRAPH_NAME_human_gene2: GRAPH_human_gene2
 }
 
 GRAPHS_BFS = [
@@ -268,10 +278,10 @@ GRAPHS_MST = [
     GRAPH_sherman3,
     GRAPH_G10,
     GRAPH_c_73,
-    GRAPH_appu,
     GRAPH_GaAsH6,
-    # GRAPH_cage13,
-    GRAPH_language
+    GRAPH_appu,
+    GRAPH_TSOPF_RS_b2383,
+    GRAPH_human_gene2
 ]
 
 ALGORITHMS = [

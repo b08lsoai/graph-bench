@@ -3,6 +3,30 @@
     {
       "meta-info": "<none>",
       "link": "http://tamu.edu",
+      "source-file": "TSOPF_RS_b2383.mtx",
+      "type": "unordered",
+      "deg-avg": 172.165,
+      "deg-sd": 148.331,
+      "deg-min": 1,
+      "deg-max": 1133,
+      "deg-distribution": [],
+      "size": "38120 38120 16171169"
+    },
+    {
+      "meta-info": "<none>",
+      "link": "http://tamu.edu",
+      "source-file": "human_gene2.mtx",
+      "type": "unordered",
+      "deg-avg": 172.165,
+      "deg-sd": 148.331,
+      "deg-min": 1,
+      "deg-max": 1133,
+      "deg-distribution": [],
+      "size": "14340 14340 9041364"
+    },
+    {
+      "meta-info": "<none>",
+      "link": "http://tamu.edu",
       "source-file": "GaAsH6.mtx",
       "type": "unordered",
       "deg-avg": 172.165,
