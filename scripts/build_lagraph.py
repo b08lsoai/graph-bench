@@ -34,11 +34,14 @@ LAGRAPH_TARGETS = [
 #   deps/lagraph/experimental/benchmark/msf_demo.c
 # in `readproblem(...)`:
 #
-#   - "make the graph undirected":   true   -> false
 #   - "return G->A as structural":   true   -> false
 #   - "preferred GrB_Type of G->A":  GrB_UINT64 -> GrB_FP64
 #
-# These 3 lines are intentionally NOT committed (pushing a gitlink to a local
+# The "make the graph undirected" flag stays `true`: our MST matrices are
+# already symmetric in the .conv files (both triangle entries are stored), so
+# the `readproblem` symmetry check finds A == AT and no A + A' doubling happens.
+#
+# These 2 lines are intentionally NOT committed (pushing a gitlink to a local
 # submodule commit would break `git submodule update` for other machines).
 #
 # Additionally, to print the MST total weight (parsed from stdout by
