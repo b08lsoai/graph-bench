@@ -39,18 +39,6 @@
     {
       "meta-info": "<none>",
       "link": "http://tamu.edu",
-      "source-file": "language.mtx",
-      "type": "unordered",
-      "deg-avg": 172.165,
-      "deg-sd": 148.331,
-      "deg-min": 1,
-      "deg-max": 1133,
-      "deg-distribution": [],
-      "size": "399130 399130 1216334"
-    },
-    {
-      "meta-info": "<none>",
-      "link": "http://tamu.edu",
       "source-file": "G10.mtx",
       "type": "unordered",
       "deg-avg": 172.165,
@@ -83,18 +71,6 @@
       "deg-max": 1133,
       "deg-distribution": [],
       "size": "169422 169422 724348"
-    },
-    {
-      "meta-info": "<none>",
-      "link": "http://tamu.edu",
-      "source-file": "cage13.mtx",
-      "type": "unordered",
-      "deg-avg": 172.165,
-      "deg-sd": 148.331,
-      "deg-min": 1,
-      "deg-max": 1133,
-      "deg-distribution": [],
-      "size": "445315 445315 7479343"
     },
     {
       "meta-info": "<none>",
@@ -611,6 +587,126 @@
         "179 2997488 0.0415125"
       ],
       "size": "41652230 41652230 2405026092"
+    },
+    {
+      "meta-info": "<none>",
+      "link": "https://sparse.tamu.edu/DIMACS10/ky2010",
+      "source-file": "ky2010.mtx",
+      "type": "unordered",
+      "deg-avg": 0,
+      "deg-sd": 0,
+      "deg-min": 0,
+      "deg-max": 0,
+      "deg-distribution": [],
+      "size": "161672 161672 787778"
+    },
+    {
+      "meta-info": "<none>",
+      "link": "https://sparse.tamu.edu/GAP/GAP-road",
+      "source-file": "GAP-road.mtx",
+      "type": "unordered",
+      "deg-avg": 0,
+      "deg-sd": 0,
+      "deg-min": 0,
+      "deg-max": 0,
+      "deg-distribution": [],
+      "size": "23947347 23947347 57708624"
+    },
+    {
+      "meta-info": "<none>",
+      "link": "https://sparse.tamu.edu/MAWI/mawi_201512012345",
+      "source-file": "mawi_201512012345.mtx",
+      "type": "unordered",
+      "deg-avg": 0,
+      "deg-sd": 0,
+      "deg-min": 0,
+      "deg-max": 0,
+      "deg-distribution": [],
+      "size": "18571154 18571154 38040320"
+    },
+    {
+      "meta-info": "<none>",
+      "link": "https://sparse.tamu.edu/Bodendiek/CurlCurl_3",
+      "source-file": "CurlCurl_3.mtx",
+      "type": "unordered",
+      "deg-avg": 0,
+      "deg-sd": 0,
+      "deg-min": 0,
+      "deg-max": 0,
+      "deg-distribution": [],
+      "size": "1219574 1219574 13544618"
+    },
+    {
+      "meta-info": "<none>",
+      "link": "https://sparse.tamu.edu/DIMACS10/kron_g500-logn21",
+      "source-file": "kron_g500-logn21.mtx",
+      "type": "unordered",
+      "deg-avg": 0,
+      "deg-sd": 0,
+      "deg-min": 0,
+      "deg-max": 0,
+      "deg-distribution": [],
+      "size": "2097152 2097152 182082942"
+    },
+    {
+      "meta-info": "<none>",
+      "link": "https://sparse.tamu.edu/FlowIPM22/Spielman_k200",
+      "source-file": "Spielman_k200.mtx",
+      "type": "unordered",
+      "deg-avg": 0,
+      "deg-sd": 0,
+      "deg-min": 0,
+      "deg-max": 0,
+      "deg-distribution": [],
+      "size": "2686802 2686802 8100804"
+    },
+    {
+      "meta-info": "<none>",
+      "link": "https://sparse.tamu.edu/FlowIPM22/Spielman_k300",
+      "source-file": "Spielman_k300.mtx",
+      "type": "unordered",
+      "deg-avg": 0,
+      "deg-sd": 0,
+      "deg-min": 0,
+      "deg-max": 0,
+      "deg-distribution": [],
+      "size": "9045202 9045202 27226204"
+    },
+    {
+      "meta-info": "<none>",
+      "link": "https://sparse.tamu.edu/Janna/Queen_4147",
+      "source-file": "Queen_4147.mtx",
+      "type": "unordered",
+      "deg-avg": 0,
+      "deg-sd": 0,
+      "deg-min": 0,
+      "deg-max": 0,
+      "deg-distribution": [],
+      "size": "4147110 4147110 316548962"
+    },
+    {
+      "meta-info": "<none>",
+      "link": "https://sparse.tamu.edu/Schenk/nlpkkt160",
+      "source-file": "nlpkkt160.mtx",
+      "type": "unordered",
+      "deg-avg": 0,
+      "deg-sd": 0,
+      "deg-min": 0,
+      "deg-max": 0,
+      "deg-distribution": [],
+      "size": "8345600 8345600 225422112"
+    },
+    {
+      "meta-info": "<none>",
+      "link": "https://sparse.tamu.edu/DIMACS10/il2010",
+      "source-file": "il2010.mtx",
+      "type": "unordered",
+      "deg-avg": 0,
+      "deg-sd": 0,
+      "deg-min": 0,
+      "deg-max": 0,
+      "deg-distribution": [],
+      "size": "451554 451554 2164464"
     }
   ]
 }

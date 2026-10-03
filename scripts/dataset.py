@@ -68,14 +68,22 @@ GRAPH_NAME_nemeth15 = 'nemeth15'
 GRAPH_NAME_1138_bus = '1138_bus'
 GRAPH_NAME_CAG_mat1916 = 'CAG_mat1916'
 GRAPH_NAME_sherman3 = 'sherman3'
-GRAPH_NAME_cage13 = 'cage13'
 GRAPH_NAME_c_73 = 'c-73'
 GRAPH_NAME_appu = 'appu'
 GRAPH_NAME_G10 = 'G10'
 GRAPH_NAME_GaAsH6 = 'GaAsH6'
-GRAPH_NAME_language = 'language'
 GRAPH_NAME_TSOPF_RS_b2383 = 'TSOPF_RS_b2383'
 GRAPH_NAME_human_gene2 = 'human_gene2'
+GRAPH_NAME_ky2010 = 'ky2010'
+GRAPH_NAME_mawi_201512012345 = 'mawi_201512012345'
+GRAPH_NAME_GAP_road = 'GAP-road'
+GRAPH_NAME_CurlCurl_3 = 'CurlCurl_3'
+GRAPH_NAME_kron_g500_logn21 = 'kron_g500-logn21'
+GRAPH_NAME_Spielman_k200 = 'Spielman_k200'
+GRAPH_NAME_Spielman_k300 = 'Spielman_k300'
+GRAPH_NAME_Queen_4147 = 'Queen_4147'
+GRAPH_NAME_nlpkkt160 = 'nlpkkt160'
+GRAPH_NAME_il2010 = 'il2010'
 
 GRAPHS_NAMES_ALL = [
     GRAPH_NAME_coAuthorsCiteseer,
@@ -97,14 +105,22 @@ GRAPHS_NAMES_ALL = [
     GRAPH_NAME_1138_bus,
     GRAPH_NAME_CAG_mat1916,
     GRAPH_NAME_sherman3,
-    GRAPH_NAME_cage13,
     GRAPH_NAME_c_73,
     GRAPH_NAME_appu,
     GRAPH_NAME_G10,
     GRAPH_NAME_GaAsH6,
-    GRAPH_NAME_language,
     GRAPH_NAME_TSOPF_RS_b2383,
-    GRAPH_NAME_human_gene2
+    GRAPH_NAME_human_gene2,
+    GRAPH_NAME_ky2010,
+    GRAPH_NAME_mawi_201512012345,
+    GRAPH_NAME_GAP_road,
+    GRAPH_NAME_CurlCurl_3,
+    GRAPH_NAME_kron_g500_logn21,
+    GRAPH_NAME_Spielman_k200,
+    GRAPH_NAME_Spielman_k300,
+    GRAPH_NAME_Queen_4147,
+    GRAPH_NAME_nlpkkt160,
+    GRAPH_NAME_il2010
 ]
 
 GRAPHS_NAMES_SHORT = {
@@ -127,14 +143,22 @@ GRAPHS_NAMES_SHORT = {
     GRAPH_NAME_1138_bus: '1138bs',
     GRAPH_NAME_CAG_mat1916: 'CAG1916',
     GRAPH_NAME_sherman3: 'shrmn3',
-    GRAPH_NAME_cage13: 'cage13',
     GRAPH_NAME_c_73: 'c-73',
     GRAPH_NAME_appu: 'appu',
     GRAPH_NAME_G10: 'G10',
     GRAPH_NAME_GaAsH6: 'GSH',
-    GRAPH_NAME_language: 'lngg',
     GRAPH_NAME_TSOPF_RS_b2383: 'TSOPF_RS_b2383',
-    GRAPH_NAME_human_gene2: 'human_gene2'
+    GRAPH_NAME_human_gene2: 'human_gene2',
+    GRAPH_NAME_ky2010: 'ky2010',
+    GRAPH_NAME_mawi_201512012345: 'mawi2015',
+    GRAPH_NAME_GAP_road: 'GAP-road',
+    GRAPH_NAME_CurlCurl_3: 'CurCurl3',
+    GRAPH_NAME_kron_g500_logn21: 'kron500',
+    GRAPH_NAME_Spielman_k200: 'Spilmk200',
+    GRAPH_NAME_Spielman_k300: 'Spilmk300',
+    GRAPH_NAME_Queen_4147: 'Quen4147',
+    GRAPH_NAME_nlpkkt160: 'nlpk160',
+    GRAPH_NAME_il2010: 'il2010'
 }
 
 GRAPHS_NAMES_DEFAULT = [
@@ -172,14 +196,22 @@ GRAPH_nemeth15 = Graph(GRAPH_NAME_nemeth15)
 GRAPH_1138_bus = Graph(GRAPH_NAME_1138_bus)
 GRAPH_CAG_mat1916 = Graph(GRAPH_NAME_CAG_mat1916)
 GRAPH_sherman3 = Graph(GRAPH_NAME_sherman3)
-GRAPH_cage13 = Graph(GRAPH_NAME_cage13)
 GRAPH_c_73 = Graph(GRAPH_NAME_c_73)
 GRAPH_appu = Graph(GRAPH_NAME_appu)
 GRAPH_G10 = Graph(GRAPH_NAME_G10)
 GRAPH_GaAsH6 = Graph(GRAPH_NAME_GaAsH6)
-GRAPH_language = Graph(GRAPH_NAME_language)
 GRAPH_TSOPF_RS_b2383 = Graph(GRAPH_NAME_TSOPF_RS_b2383)
 GRAPH_human_gene2 = Graph(GRAPH_NAME_human_gene2)
+GRAPH_ky2010 = Graph(GRAPH_NAME_ky2010)
+GRAPH_mawi_201512012345 = Graph(GRAPH_NAME_mawi_201512012345)
+GRAPH_GAP_road = Graph(GRAPH_NAME_GAP_road)
+GRAPH_CurlCurl_3 = Graph(GRAPH_NAME_CurlCurl_3)
+GRAPH_kron_g500_logn21 = Graph(GRAPH_NAME_kron_g500_logn21)
+GRAPH_Spielman_k200 = Graph(GRAPH_NAME_Spielman_k200)
+GRAPH_Spielman_k300 = Graph(GRAPH_NAME_Spielman_k300)
+GRAPH_Queen_4147 = Graph(GRAPH_NAME_Queen_4147)
+GRAPH_nlpkkt160 = Graph(GRAPH_NAME_nlpkkt160)
+GRAPH_il2010 = Graph(GRAPH_NAME_il2010)
 
 GRAPHS_DATA = {
     GRAPH_NAME_coAuthorsCiteseer: GRAPH_coAuthorsCiteseer,
@@ -201,14 +233,22 @@ GRAPHS_DATA = {
     GRAPH_NAME_1138_bus: GRAPH_1138_bus,
     GRAPH_NAME_CAG_mat1916: GRAPH_CAG_mat1916,
     GRAPH_NAME_sherman3: GRAPH_sherman3,
-    GRAPH_NAME_cage13: GRAPH_cage13,
     GRAPH_NAME_c_73: GRAPH_c_73,
     GRAPH_NAME_appu: GRAPH_appu,
     GRAPH_NAME_G10: GRAPH_G10,
     GRAPH_NAME_GaAsH6:    GRAPH_GaAsH6,
-    GRAPH_NAME_language: GRAPH_language,
     GRAPH_NAME_TSOPF_RS_b2383: GRAPH_TSOPF_RS_b2383,
-    GRAPH_NAME_human_gene2: GRAPH_human_gene2
+    GRAPH_NAME_human_gene2: GRAPH_human_gene2,
+    GRAPH_NAME_ky2010: GRAPH_ky2010,
+    GRAPH_NAME_mawi_201512012345: GRAPH_mawi_201512012345,
+    GRAPH_NAME_GAP_road: GRAPH_GAP_road,
+    GRAPH_NAME_CurlCurl_3: GRAPH_CurlCurl_3,
+    GRAPH_NAME_kron_g500_logn21: GRAPH_kron_g500_logn21,
+    GRAPH_NAME_Spielman_k200: GRAPH_Spielman_k200,
+    GRAPH_NAME_Spielman_k300: GRAPH_Spielman_k300,
+    GRAPH_NAME_Queen_4147: GRAPH_Queen_4147,
+    GRAPH_NAME_nlpkkt160: GRAPH_nlpkkt160,
+    GRAPH_NAME_il2010: GRAPH_il2010
 }
 
 GRAPHS_BFS = [
@@ -274,14 +314,20 @@ GRAPHS_TC = [
 GRAPHS_MST = [
     GRAPH_nemeth15,
     GRAPH_1138_bus,
-    GRAPH_CAG_mat1916,
-    GRAPH_sherman3,
     GRAPH_G10,
     GRAPH_c_73,
+    GRAPH_il2010,
     GRAPH_GaAsH6,
-    GRAPH_appu,
-    GRAPH_TSOPF_RS_b2383,
-    GRAPH_human_gene2
+    GRAPH_human_gene2,
+    GRAPH_ky2010,
+    GRAPH_CurlCurl_3,
+    GRAPH_kron_g500_logn21,
+    GRAPH_Spielman_k200,
+    GRAPH_Spielman_k300,
+    GRAPH_Queen_4147,
+    GRAPH_nlpkkt160,
+    GRAPH_mawi_201512012345,
+    GRAPH_GAP_road
 ]
 
 ALGORITHMS = [
