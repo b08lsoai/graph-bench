@@ -47,10 +47,12 @@ class DriverGunrock(driver.Driver):
     def _run_many(executable, args, num_iterations, parse_weight=False):
         """
         The examples print one "GPU Elapsed Time : X (ms)" line per run, so we
-        invoke the binary once with `-n (num_iterations + 1)` and treat the
-        first measurement as a warm-up (to mirror the old API behaviour).
+        invoke the binary once with `-n num_iterations` and treat the
+        first measurement as a warm-up. This mirrors spla/lagraph, which also
+        perform `num_iterations` runs in total (1 warm-up + num_iterations-1
+        measured runs).
         """
-        args = args + ["-n", str(num_iterations + 1)]
+        args = args + ["-n", str(num_iterations)]
         output = subprocess.check_output([str(executable)] + args)
         lines = output.decode("ASCII").replace("\r", "").split("\n")
         runs = []
