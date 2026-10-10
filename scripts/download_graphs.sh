@@ -4,13 +4,18 @@
 # benchmark. Matrices are not stored in the repo; run this script once after
 # cloning to fetch every .mtx file into the dataset directory.
 #
-# The list mirrors the `GRPAHS_MST` set in scripts/dataset.py:
-#   nemeth15 1138_bus G10 c-73 il2010 GaAsH6 human_gene2 ky2010
-#   CurlCurl_3 kron_g500-logn21 Spielman_k200 Spielman_k300
-#   Queen_4147 nlpkkt160 mawi_201512012345 GAP-road
+# The list mirrors the `GRAPHS_MST` set in scripts/dataset.py:
+#   nemeth15 1138_bus G10 c-73 il2010 GaAsH6 ky2010
+#   CurlCurl_3 kron_g500-logn21 Spielman_k200 Spielman_k300 Spielman_k600
+#   Queen_4147 nlpkkt160 nlpkkt240 GAP-road
 #
 # Each graph is defined as "PART/GROUP/NAME.tar.gz" (e.g. "MM/DIMACS10/ky2010").
 # The full URL is https://sparse.tamu.edu/<PART/GROUP/NAME>.tar.gz
+#
+# All graphs must be CONNECTED and WEIGHTED: the MST benchmark compares
+# tools that require connectivity (gunrock's Boruvka throws on
+# disconnected graphs), so disconnected graphs (e.g. human_gene2,
+# mawi_201512012345) are intentionally excluded.
 #
 # Usage:
 #   ./download_graphs.sh                    download all graphs
@@ -27,7 +32,8 @@ TARGET_DIR="${TARGET_DIR:-$(dirname "$SCRIPT_DIR")/dataset}"
 BASE_URL="https://sparse.tamu.edu"
 
 # PART/GROUP/NAME of each graph to download.
-# Weighted, undirected graphs suitable for the MST (Boruvka) benchmark.
+# Weighted, undirected, connected graphs suitable for the MST (Boruvka)
+# benchmark.
 GRAPHS=(
     "MM/Nemeth/nemeth15"
     "MM/HB/1138_bus"
@@ -35,15 +41,15 @@ GRAPHS=(
     "MM/Schenk_IBMNA/c-73"
     "MM/DIMACS10/il2010"
     "MM/PARSEC/GaAsH6"
-    "MM/Belcastro/human_gene2"
-    "MM/DIMACS10/ky2010"
+    "MM/DIMACS10/ky2010" # 2 компоненты
     "MM/Bodendiek/CurlCurl_3"
-    "MM/DIMACS10/kron_g500-logn21"
+    "MM/DIMACS10/kron_g500-logn21" # не связный
     "MM/FlowIPM22/Spielman_k200"
     "MM/FlowIPM22/Spielman_k300"
-    "MM/Janna/Queen_4147"
+    "MM/FlowIPM22/Spielman_k600"
+    "MM/Janna/Queen_4147" # не связный
     "MM/Schenk/nlpkkt160"
-    "MM/MAWI/mawi_201512012345"
+    "MM/Schenk/nlpkkt240"
     "MM/GAP/GAP-road"
 )
 

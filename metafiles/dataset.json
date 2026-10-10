@@ -674,6 +674,18 @@
     },
     {
       "meta-info": "<none>",
+      "link": "https://sparse.tamu.edu/FlowIPM22/Spielman_k600",
+      "source-file": "Spielman_k600.mtx",
+      "type": "unordered",
+      "deg-avg": 0,
+      "deg-sd": 0,
+      "deg-min": 0,
+      "deg-max": 0,
+      "deg-distribution": [],
+      "size": "72180402 72180402 216902404"
+    },
+    {
+      "meta-info": "<none>",
       "link": "https://sparse.tamu.edu/Janna/Queen_4147",
       "source-file": "Queen_4147.mtx",
       "type": "unordered",
@@ -695,6 +707,18 @@
       "deg-max": 0,
       "deg-distribution": [],
       "size": "8345600 8345600 225422112"
+    },
+    {
+      "meta-info": "<none>",
+      "link": "https://sparse.tamu.edu/Schenk/nlpkkt240",
+      "source-file": "nlpkkt240.mtx",
+      "type": "unordered",
+      "deg-avg": 0,
+      "deg-sd": 0,
+      "deg-min": 0,
+      "deg-max": 0,
+      "deg-distribution": [],
+      "size": "27993600 27993600 760648352"
     },
     {
       "meta-info": "<none>",

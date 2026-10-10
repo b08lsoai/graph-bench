@@ -81,8 +81,10 @@ GRAPH_NAME_CurlCurl_3 = 'CurlCurl_3'
 GRAPH_NAME_kron_g500_logn21 = 'kron_g500-logn21'
 GRAPH_NAME_Spielman_k200 = 'Spielman_k200'
 GRAPH_NAME_Spielman_k300 = 'Spielman_k300'
+GRAPH_NAME_Spielman_k600 = 'Spielman_k600'
 GRAPH_NAME_Queen_4147 = 'Queen_4147'
 GRAPH_NAME_nlpkkt160 = 'nlpkkt160'
+GRAPH_NAME_nlpkkt240 = 'nlpkkt240'
 GRAPH_NAME_il2010 = 'il2010'
 
 GRAPHS_NAMES_ALL = [
@@ -118,8 +120,10 @@ GRAPHS_NAMES_ALL = [
     GRAPH_NAME_kron_g500_logn21,
     GRAPH_NAME_Spielman_k200,
     GRAPH_NAME_Spielman_k300,
+    GRAPH_NAME_Spielman_k600,
     GRAPH_NAME_Queen_4147,
     GRAPH_NAME_nlpkkt160,
+    GRAPH_NAME_nlpkkt240,
     GRAPH_NAME_il2010
 ]
 
@@ -156,8 +160,10 @@ GRAPHS_NAMES_SHORT = {
     GRAPH_NAME_kron_g500_logn21: 'kron500',
     GRAPH_NAME_Spielman_k200: 'Spilmk200',
     GRAPH_NAME_Spielman_k300: 'Spilmk300',
+    GRAPH_NAME_Spielman_k600: 'Spilmk600',
     GRAPH_NAME_Queen_4147: 'Quen4147',
     GRAPH_NAME_nlpkkt160: 'nlpk160',
+    GRAPH_NAME_nlpkkt240: 'nlpk240',
     GRAPH_NAME_il2010: 'il2010'
 }
 
@@ -209,8 +215,10 @@ GRAPH_CurlCurl_3 = Graph(GRAPH_NAME_CurlCurl_3)
 GRAPH_kron_g500_logn21 = Graph(GRAPH_NAME_kron_g500_logn21)
 GRAPH_Spielman_k200 = Graph(GRAPH_NAME_Spielman_k200)
 GRAPH_Spielman_k300 = Graph(GRAPH_NAME_Spielman_k300)
+GRAPH_Spielman_k600 = Graph(GRAPH_NAME_Spielman_k600)
 GRAPH_Queen_4147 = Graph(GRAPH_NAME_Queen_4147)
 GRAPH_nlpkkt160 = Graph(GRAPH_NAME_nlpkkt160)
+GRAPH_nlpkkt240 = Graph(GRAPH_NAME_nlpkkt240)
 GRAPH_il2010 = Graph(GRAPH_NAME_il2010)
 
 GRAPHS_DATA = {
@@ -246,8 +254,10 @@ GRAPHS_DATA = {
     GRAPH_NAME_kron_g500_logn21: GRAPH_kron_g500_logn21,
     GRAPH_NAME_Spielman_k200: GRAPH_Spielman_k200,
     GRAPH_NAME_Spielman_k300: GRAPH_Spielman_k300,
+    GRAPH_NAME_Spielman_k600: GRAPH_Spielman_k600,
     GRAPH_NAME_Queen_4147: GRAPH_Queen_4147,
     GRAPH_NAME_nlpkkt160: GRAPH_nlpkkt160,
+    GRAPH_NAME_nlpkkt240: GRAPH_nlpkkt240,
     GRAPH_NAME_il2010: GRAPH_il2010
 }
 
@@ -318,15 +328,15 @@ GRAPHS_MST = [
     GRAPH_c_73,
     GRAPH_il2010,
     GRAPH_GaAsH6,
-    GRAPH_human_gene2,
     GRAPH_ky2010,
     GRAPH_CurlCurl_3,
     GRAPH_kron_g500_logn21,
     GRAPH_Spielman_k200,
     GRAPH_Spielman_k300,
+    GRAPH_Spielman_k600,
     GRAPH_Queen_4147,
     GRAPH_nlpkkt160,
-    GRAPH_mawi_201512012345,
+    GRAPH_nlpkkt240,
     GRAPH_GAP_road
 ]
 
