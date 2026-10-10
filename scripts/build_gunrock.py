@@ -8,6 +8,28 @@ GUNROCK_PATH = config.DEPS / "gunrock"
 GUNROCK_BUILD = GUNROCK_PATH / "build"
 GUNROCK_TARGETS = ["mst", "bfs", "sssp", "pr", "tc"]
 
+# NOTE: The MST benchmark uses the upstream Gunrock examples with
+# local-only patches applied to deps/gunrock (no fork). To make the
+# examples print one "GPU Elapsed Time : X (ms)" line per run and
+# (for MST) the total tree weight, the following changes must be
+# applied locally before building:
+#
+#   examples/algorithms/mst/mst.cu
+#     - add the `-n/--num_runs` option (default 1);
+#     - run `gunrock::mst::run` `num_runs` times and print
+#       "GPU Elapsed Time : <time> (ms)" after every run;
+#     - print the resulting tree weight as "GPU MST Weight: <weight>"
+#       (parsed from stdout by driver_gunrock.py) once after the runs.
+#
+#   examples/algorithms/{bfs,sssp,pr,tc}/*.cu
+#     - print "GPU Elapsed Time : <time> (ms)" for every run, so
+#       driver_gunrock.py can collect all measurements from a single
+#       invocation (tc also gets the `-n/--num_runs` option).
+#
+# These patches are intentionally NOT committed (pushing a gitlink to a
+# local submodule commit would break `git submodule update` for other
+# machines).
+
 
 def build(args):
     try:
