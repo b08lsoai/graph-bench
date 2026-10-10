@@ -13,6 +13,20 @@ Benchmarks suite for performance study of various graph analysis frameworks for 
 | Gunrock    | High-performance graph primitives on GPUs                          |      GPU |       CUDA |         [link](https://github.com/gunrock/gunrock) |
 | LaGraph    | Collection of graph algorithms for SuiteSparse:GraphBLAS libray    |      CPU |     OpenMP |       [link](https://github.com/GraphBLAS/LAGraph) |
 
+## Algorithms description
+
+| Name | Brief                                | spla | GraphBLAST | Gunrock | LaGraph |
+|:-----|:-------------------------------------|:----:|:----------:|:-------:|:-------:|
+| bfs  | Breadth-first search                 |  ✓   |     ✓      |    ✓    |    ✓    |
+| sssp | Single-source shortest paths         |  ✓   |     ✓      |    ✓    |    ✓    |
+| pr   | Page rank                            |  ✓   |     ✓      |    ✓    |    ✓    |
+| tc   | Triangles counting                   |  ✓   |     ✓      |    ✓    |    ✓    |
+| mst  | Minimum spanning tree (Boruvka)      |  ✓   |     —      |    ✓    |    ✓    |
+
+> The `mst` benchmark runs on a separate set of weighted graphs (fetched with
+> [scripts/download_graphs.sh](./scripts/download_graphs.sh)). GraphBLAST does
+> not provide an MST implementation.
+
 ## Dataset description
 
 | Name              | Vertices |   Edges | Avg Deg | Sd Deg | Min Deg |   Max Deg |                                                                                              Link |
@@ -89,6 +103,10 @@ Download all graphs one by one archives and extract into [dataset](./dataset) fo
 Alternatively, download all graphs within single archive
 from [Google Drive](https://drive.google.com/file/d/14RHaC_Ze_qoeb2GuhXOkirVaTvkRlv35/view?usp=share_link).
 
+The `mst` algorithm uses a separate set of weighted graphs (see `GRAPHS_MST` in
+[scripts/dataset.py](./scripts/dataset.py)); fetch them with
+[scripts/download_graphs.sh](./scripts/download_graphs.sh).
+
 ### 5. How to prepare data
 
 After dataset unpack into [dataset](./dataset) folder you have to run convert tool to prepare graphs.
@@ -120,11 +138,11 @@ python3 scripts/benchmark.py --tool=spla,lagraph,gunrock,graphblast
 Run particular algorithm for performance measurements. Use comma and no space to select multiple.
 
 ```shell
-python3 scripts/benchmark.py --algo=[all, bfs, sssp, pr, tc]
+python3 scripts/benchmark.py --algo=[all, bfs, sssp, pr, tc, mst]
 ```
 
 ```shell
-python3 scripts/benchmark.py --algo=bfs,sssp,pr,tc
+python3 scripts/benchmark.py --algo=bfs,sssp,pr,tc,mst
 ```
 
 Provide csv file name to save all stats of the benchmark.
